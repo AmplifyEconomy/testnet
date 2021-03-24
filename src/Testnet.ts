@@ -18,7 +18,7 @@ Server.use((req, res, next) => {
 Server.use(BodyParser.json());
 Server.use(BodyParser.urlencoded({ extended: true }));
 
-Server.get('/', Status);
+Server.get('/testnet', Status);
 Server.post('/dispense', Dispense);
 
 Server.listen(PORT, () => {

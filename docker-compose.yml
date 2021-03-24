@@ -45,7 +45,7 @@ services:
     networks:
       - sub-etha
   # The TestWeave net
-  testwaeve:
+  testweave:
     image: "reverseproxy:1.0.0"
     container_name: testweave
     build:
@@ -55,10 +55,27 @@ services:
       - postgres
       - arweave-node
       - arweave-gateway
+      - faucet
     ports:
       - "80:80"
     expose:
       - 80
+    networks:
+      - sub-etha
+  faucet:
+    image: "faucet:1.0.0"
+    container_name: faucet
+    build:
+      context: .
+      dockerfile: ./docker/faucet.dockerfile
+    links: 
+      - postgres
+      - arweave-node
+      - arweave-gateway
+    ports:
+      - "4000:4000"
+    expose:
+      - 4000
     networks:
       - sub-etha
 volumes:
