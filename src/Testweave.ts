@@ -2,9 +2,9 @@ import Arweave from 'arweave/node';
 import Testweave from 'testweave-sdk';
 
 export const arweave = Arweave.init({
-    host: process.env.HOST || 'localhost',
-    port: process.env.PORT || '80',
-    protocol: process.env.PROTOCOL || 'http',
+    host: 'localhost',
+    port: 1984,
+    protocol: 'http',
     timeout: 20000,
     logging: false,
 });

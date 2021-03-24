@@ -45,7 +45,7 @@ services:
     networks:
       - sub-etha
   # The TestWeave net
-  testwaeve:
+  testweave:
     image: "reverseproxy:1.0.0"
     container_name: testweave
     build:
